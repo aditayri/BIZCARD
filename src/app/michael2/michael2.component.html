@@ -10,14 +10,10 @@
         <article>
         <h2>מיכאל לימוזין הסעות</h2>
         <p>{{AboutUs}}</p>
-        <mat-icon>gmail</mat-icon>
-        <mat-icon>whatsapp</mat-icon>
-        <mat-icon>whatsapp</mat-icon>
-
         </article>
 
       <div class = "Buttons" >
-        <!-- <div> <a [href]="sanitizedUrl" target="_blank"  style="text-decoration: none;">
+         <!-- <div> <a [href]="sanitizedUrl" target="_blank"  style="text-decoration: none;">
           <img src="./assets/michael-limousin-images/whatsapp.png"></a>
           <p id="whatsapp">ווטצאפ</p></div>
   
@@ -25,13 +21,23 @@
           <p id="gmail">דוא"ל</p></div>
 
           <div><a href={{WebsiteUrl}}><img src="./assets/michael-limousin-images/website.png"> </a>
-            <p id="website">האתר הרשמי</p></div> -->
+            <p id="website">האתר הרשמי</p></div>  -->
             
-             <!--  <i class="fab fa-whatsapp"></i>
-              <i class="fas fa-globe"></i>
-              <i class="fab fa-google"></i>
-              <i class="fas fa-envelope"></i> -->
-
+            <div> <a [href]="sanitizedUrl" target="_blank"  style="text-decoration: none;">
+              <i class="fab fa-whatsapp"></i>
+              <p id="whatsapp">ווטצאפ</p>
+            </a></div>
+              
+            <div><a href={{GmailTo}}>
+              <i class="fas fa-envelope"></i>
+              <p id="gmail">דוא"ל</p>
+            </a></div>
+    
+              <div><a href={{WebsiteUrl}}>
+                <i class="fas fa-globe"></i>
+                <p id="website">האתר הרשמי</p>
+              </a></div>
+ 
 
       </div>
 

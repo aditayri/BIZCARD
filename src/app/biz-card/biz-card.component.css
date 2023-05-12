@@ -1,26 +1,39 @@
+
 ::ng-deep :root {
     --max-width: 500px; /* define the max width value as a CSS variable */
     --min-width: 300px;
+    --flood-color:rgb(255, 255, 255);
   }
+ 
 
-body {
+body{
+/*     border: 2px solid rgb(37, 149, 171);
+ */   
+ width: 100%;
+ max-width: var(--max-width);
+ min-width: var(--min-width);
+ margin:0;
+ display: block;
+     background-image: url('src/assets/bizcard-images/background-image.jpg');
+     background-repeat: no-repeat;
+     background-size: cover;
+/*     background-color: rgb(15, 29, 53);
+ */
 
-     /* border: 4px solid red; */
-     position: relative;
-     width: 100%;
-     max-width: var(--max-width);
-     min-width: var(--min-width);
-     margin:0;
-     background-color: rgb(30, 29, 27); 
-    
-  }
-
-.Theme {
-    /*border: 2px solid green;*/
-    width: 100%;
-    height:210px;
 }
-.Profile {
+
+.theme-wrapper{
+    width: 96%;
+    margin: auto auto;
+    height: 180px;
+}
+
+#themePic{
+    width: 100%;
+    height:100%;
+}
+
+#Profile {
     height: 120px;
     width: 120px;
     border-radius: 100%;
@@ -30,66 +43,81 @@ body {
     object-fit: cover; 
     
 }
-
- section{
-/*      border: 4px solid green; 
- */             
-     margin-top: 70px;  
-     height: 70vh;
-/*      min-height: calc(100vh - 50px); 
- */}
-
-
-.AboutUs {
-/*     border: 1px solid #fff;
- */     
-    margin-left: 100px;
-    
+section{
+    /* border: 2px solid rgb(37, 149, 171); */
+    display: block;
+    position: relative;
+    overflow: auto;
 }
-.Buttons {
-/*            border: 1px solid rgb(43, 0, 255);
- */         float: left;
-            height: 100%;
-            width:100px;
-/*             display: grid;
- */         text-align: center;
-            align-items: center;
+section::-webkit-scrollbar{
+   display: none;
+    }
+
+
+    section article p{
+        /*     border: 2px solid rgb(130, 205, 25); 
+         */     /* background-color: rgb(58, 72, 96);   */
+        
+/*             direction: rtl;
+ */          
+            color: rgb(218, 227, 242);
+            width: 90%;
+            line-height: 1.5;
+            font-size: 25px;
+            text-align: left;
+           /*  margin-top: 10px;
+            padding: 30px; */
         }
- 
-       
-.AboutUs #CompanyName {
-/*     border: 4px solid rgb(143, 94, 113) ; 
- */   
-    text-align: center;
-    color: aliceblue;
+        section article h2{
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgba(234, 232, 249, 0.872);
+            font-size: 40px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            text-align: center;
+            text-shadow: 2px 2px 2px rgba(193, 187, 232, 0.872);
+        
+        }
+        
 
-}
-.AboutUs #about{
-/*      border: 4px solid rgb(255, 0, 102) ;
- */  
-    color: #3fe3e3;
-    width: 85%;
-    margin: auto auto;
-    font-size: 28px;
-    font-family: "Billabong", cursive;
-}
+        .Buttons{
+            /* border: 4px solid rgb(211, 32, 151); */ 
+            /* background-color: rgb(58, 72, 96); */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;     
+       }
+       
+       .Buttons div{
+             /* border: 1px solid rgb(16, 4, 92); */
+             
+        margin-top: 10px; 
+        margin-bottom: 10px; 
+           
+        align-items: center;
+        text-align: center;
+        width: calc(100% / 4);
+       
+        
+       }
+
 
 
 .Buttons img{
 /*     border: 2px solid rgb(255, 0, 102) ;
  */    
-    width: 40px;
-    height: 40px;
+    
     font-family: "Billabong", cursive;
-    font-size: 18px;
+    font-size: 10px;
+    width: 25px; 
+    height: 25px;
+   
 }
 
 .Buttons p{
-/*     border: 2px solid rgb(255, 0, 102) ;*/
-
-        color: #fff;
-        font-family: "Billabong", cursive;
-        font-size: 18px;
-        margin :1;
- }
-
+    color:var(--flood-color);
+    font-family: "Billabong", cursive;
+    font-size: 16px;
+    margin-top: 10px;
+}

@@ -1,11 +1,17 @@
 
 <body>
   
-    <img src = "./assets/bizcard-images/theme.jpg" class = "Theme">
-    <img src = "./assets/bizcard-images/profile.jpg" class = Profile>
-  
+  <div class="theme-wrapper"><img id="themePic" src = "./assets/bizcard-images/theme.jpg">
+    <img  id = "Profile" src = "./assets/bizcard-images/profile.jpg"></div>
+    
   
   <section>
+
+    <article>
+      <h2>BIZCARD</h2>
+      <p>{{AboutUs}}</p>
+      </article>
+
       <div class = "Buttons" >
   
         <div> <a [href]="sanitizedUrl" target="_blank"  style="text-decoration: none;">
@@ -21,23 +27,10 @@
   
         <div><a href={{GmailTo}}><img src="./assets/bizcard-images/gmail.png"> </a>
           <p id="gmail">Gmail</p></div>
-  
-        <!-- <div><img src="./assets/Pictures/viber.png">
-            <p id="call">call</p></div>  -->
-            
-             
+ 
       </div>
-  
-         
-  
-      <div class = "AboutUs">
-        <p id="CompanyName">{{CompanyName}}</p>
-        <br>
-        <p id="about">{{AboutUs}}</p>
-      </div>
-
-     
   </section>
+  
   <div class="pages">
     <button mat-button  routerLink="">BizCard</button>
     <button mat-button  routerLink="/michael-limousine">michael-limousine</button>
