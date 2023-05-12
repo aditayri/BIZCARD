@@ -1,0 +1,133 @@
+::ng-deep :root {
+    --max-width: 500px; /* define the max width value as a CSS variable */
+    --min-width: 300px;
+  }
+
+body {
+
+     /* border: 4px solid red; */
+     position: relative;
+     width: 100%;
+     max-width: var(--max-width);
+     min-width: var(--min-width);
+     margin:0;
+     background-color: rgb(55, 2, 55); 
+    
+  }
+
+.Theme {
+    /*border: 2px solid green;*/
+    width: 100%;
+    height:210px;
+    
+}
+.Profile {
+
+    height: 110px;
+    width: 200px;
+    border-radius: 8%;
+    position: absolute;
+    background-color:  rgb(94, 144, 166);
+    top: 170px;
+    right: calc(50% - 150px);
+    transition: transform 1s ease;
+
+}
+.Profile:hover {
+    transform: scale(1.1);
+}
+
+ section{
+/*      border: 4px solid green; 
+ */        
+     background: transparent;     
+     margin-top: 70px;  
+     height: 70vh;
+     overflow: auto;
+
+ }
+ section::-webkit-scrollbar{
+    display: none;
+     }
+
+
+.AboutUs {
+/*     border: 1px solid #fff;
+ */     
+    margin-left: 100px;
+    
+}
+.Buttons {
+/*             border: 1px solid rgb(43, 0, 255);
+ */ 
+    float: left;
+    height: 100%;
+    width:100px;
+    display: inline-grid;
+    text-align: center;
+    align-items: end;
+}
+ 
+       
+.AboutUs #CompanyName {
+     /* border: 4px solid rgb(143, 94, 113) ;  */
+    
+   /*  text-align: center;
+    font-size: 28px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+    color: #aaeef8;
+    transition: font-size 0.8s ease; */
+    font-size: 36px;
+    text-align: center;
+  font-weight: 600;
+  background-image: linear-gradient(to left, #9130d2, #6f24de);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  transition: font-size 0.8s ease;
+  text-shadow: 10px 10px 4px rgba(0, 0, 0, 0.3);
+
+}
+.AboutUs #CompanyName:hover {
+    /*     border: 4px solid rgb(143, 94, 113) ; 
+     */   
+        font-size: 40px;
+        text-shadow: 11px 11px 6px rgba(0, 0, 0, 0.3);
+
+    
+    }
+.AboutUs #about{
+/*      border: 4px solid rgb(255, 0, 102) ;
+ */  
+    
+    direction: rtl;
+    color: #cee3db;
+    width: 90%;
+    margin: auto auto;
+    line-height: 1.7;
+    font-size: 35px;
+}
+
+.Buttons div{
+     /* border: 2px solid rgb(217, 202, 208) ;  */
+    margin-bottom: 5px;
+}
+
+.Buttons img{
+     /* border: 2px solid rgb(255, 0, 102) ; */
+     
+    width: 40px;
+    height: 40px;
+    font-family: "Billabong", cursive;
+    font-size: 18px;
+}
+
+.Buttons p{
+    /* border: 2px solid rgb(255, 0, 102) ; */
+
+        color: #fff;
+        font-family: "Billabong", cursive;
+        font-size: 18px;
+        margin: 0 0;
+ }
+

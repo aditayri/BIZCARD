@@ -1,0 +1,56 @@
+
+<body>
+  
+    <div class = "theme-wrapper">
+    <img id = "themePic" src = "./assets/michael-limousin-images/theme.jpg" class = "Theme">
+<!--     <img id = "profilePic" src = "./assets/michael-limousin-images/profile.png" class = Profile>
+ -->  
+    </div>
+  <section>
+        <article>
+        <h2>מיכאל לימוזין הסעות</h2>
+        <p>{{AboutUs}}</p>
+        <mat-icon>gmail</mat-icon>
+        <mat-icon>whatsapp</mat-icon>
+        <mat-icon>whatsapp</mat-icon>
+
+        </article>
+
+      <div class = "Buttons" >
+        <!-- <div> <a [href]="sanitizedUrl" target="_blank"  style="text-decoration: none;">
+          <img src="./assets/michael-limousin-images/whatsapp.png"></a>
+          <p id="whatsapp">ווטצאפ</p></div>
+  
+        <div><a href={{GmailTo}}><img src="./assets/michael-limousin-images/gmail.png"> </a>
+          <p id="gmail">דוא"ל</p></div>
+
+          <div><a href={{WebsiteUrl}}><img src="./assets/michael-limousin-images/website.png"> </a>
+            <p id="website">האתר הרשמי</p></div> -->
+            
+             <!--  <i class="fab fa-whatsapp"></i>
+              <i class="fas fa-globe"></i>
+              <i class="fab fa-google"></i>
+              <i class="fas fa-envelope"></i> -->
+
+
+      </div>
+
+      <div id="map">
+        <google-map
+            height="120px"
+            width="100%"
+            [zoom]="mapZoom"
+            [center]="mapCenter"
+            [options]="options">
+            <map-marker [position]="markerPosition"></map-marker>
+      </google-map>
+      </div>
+      
+    
+ 
+  </section>
+  
+    <app-footer></app-footer>
+    
+  </body>
+  

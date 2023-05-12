@@ -1,0 +1,40 @@
+
+<body>
+  
+    <img src = "./assets/michael-limousin-images/theme.jpg" class = "Theme">
+    <img src = "./assets/michael-limousin-images/profile.png" class = Profile fill>
+  
+  
+  <section>
+      <div class = "Buttons" >
+  
+        <div> <a [href]="sanitizedUrl" target="_blank"  style="text-decoration: none;">
+          <img src="./assets/michael-limousin-images/whatsapp.png">
+          <p id="whatsapp">שלח/י הודעה בווטצאפ</p></a></div>
+  
+        <div><a href={{GmailTo}}><img src="./assets/michael-limousin-images/gmail.png"> </a>
+          <p id="gmail">שלח/י מייל</p></div>
+
+          <div><a href={{WebsiteUrl}}><img src="./assets/michael-limousin-images/website.png"> </a>
+            <p id="website">בקר/י באתר</p></div>
+  
+        <!-- <div><img src="./assets/Pictures/viber.png">
+            <p id="call">call</p></div>  -->
+            
+             
+      </div>
+  
+         
+  
+      <div class = "AboutUs">
+        <h2 id="CompanyName">{{CompanyName}}</h2>
+        <p id="about">{{AboutUs}}</p>
+      </div>
+
+     
+  </section>
+  
+    <app-footer></app-footer>
+    
+  </body>
+  
