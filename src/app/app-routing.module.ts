@@ -4,8 +4,22 @@ import { BizCardComponent } from './biz-card/biz-card.component';
 import { MichaelLimousineComponent } from './michael-limousine/michael-limousine.component';
 
 const routes: Routes = [
-  {path:'', component:BizCardComponent, data: { title: 'Bizcard'}},
-  {path:'michael-limousine', component:MichaelLimousineComponent, data: { title: 'Michael Limousine' }}
+  {
+    path:'',
+    component:BizCardComponent,
+     data: {
+       title: 'Bizcard',
+       description: 'Create your own business card'
+      }
+      },
+  {
+    path:'michael-limousine', 
+    component:MichaelLimousineComponent, 
+    data: {
+       title: 'Michael Limousine' ,
+       description: 'מיכאל לימוזין הסעות'
+      }
+    }
 ];
 
 @NgModule({
