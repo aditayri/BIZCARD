@@ -16,7 +16,7 @@ const routes: Routes = [
     path:'michael-limousine', 
     component:MichaelLimousineComponent, 
     data: {
-       title: 'Michael Limousine' ,
+       title: 'Michael Limsine' ,
        description: 'מיכאל לימוזין הסעות'
       }
     }

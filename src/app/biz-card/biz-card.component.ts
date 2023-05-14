@@ -10,7 +10,7 @@ import { Title } from '@angular/platform-browser';
 })
 export class BizCardComponent implements OnInit {
 
-  title = 'BizID';
+  title = 'Bizcard';
   CompanyName= "Adi Tayri LLC";
   PhoneNumber = '+972502003238';
   Message = 'Hello, and welcome to BizId company';
@@ -25,7 +25,7 @@ export class BizCardComponent implements OnInit {
   constructor(private sanitizer: DomSanitizer, private titleService: Title) {}
 
   ngOnInit() {
-    this.titleService.setTitle('BizCard');
+    this.titleService.setTitle(this.title);
   }
 
   get sanitizedUrl(): SafeUrl {

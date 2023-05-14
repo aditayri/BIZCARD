@@ -46,29 +46,11 @@ export class MichaelLimousineComponent implements OnInit {
     private activatedRoute: ActivatedRoute ) {}
   
   ngOnInit() {
-    /* this.titleService.setTitle(this.title);
+     this.titleService.setTitle(this.title);
     this.meta.updateTag({ name: 'description', content: this.description });
     this.meta.updateTag({ property: 'og:image', content: this.metaImage });
-    this.meta.updateTag({ property: 'og:title', content: this.title });  */
-    this.router.events
-      .pipe(
-        filter((event) => event instanceof NavigationEnd),
-        map(() => this.activatedRoute),
-        map((route) => {
-          while (route.firstChild) {
-            route = route.firstChild;
-          }
-          return route;
-        }),
-        filter((route) => route.outlet === 'primary'),
-        mergeMap((route) => route.data),
-        tap(({title,description}: Data) => {
-           this.titleService.setTitle(this.title);
-           this.meta.updateTag({ name: 'description', content: this.description });
-           this.meta.updateTag({ property: 'og:image', content: this.metaImage });
-           this.meta.updateTag({ property: 'og:title', content: this.title });
-         })
-      ).subscribe();
+    this.meta.updateTag({ property: 'og:title', content: this.title });  
+    
   }
   
 
