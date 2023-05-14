@@ -4,7 +4,7 @@ import { BizCardComponent } from './biz-card/biz-card.component';
 import { MichaelLimousineComponent } from './michael-limousine/michael-limousine.component';
 
 const routes: Routes = [
-  {path:'', component:BizCardComponent},
+  {path:'', component:BizCardComponent, data: { title: 'Bizcard'}},
   {path:'michael-limousine', component:MichaelLimousineComponent, data: { title: 'Michael Limousine' }}
 ];
 
