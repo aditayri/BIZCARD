@@ -55,8 +55,7 @@ export class MichaelLimousineComponent implements OnInit {
       mergeMap((route) => route.data)
     )
     .subscribe((data) => {
-      const pageTitle = data['title'] || 'Default Page Title'; // Replace with your default page title
-      this.titleService.setTitle(pageTitle);
+      this.titleService.setTitle(this.title);
     });
   }
 
