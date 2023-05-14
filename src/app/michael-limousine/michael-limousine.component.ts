@@ -1,6 +1,8 @@
 import { Component,  OnInit } from '@angular/core';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { Title, Meta } from '@angular/platform-browser';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { filter, map, mergeMap } from 'rxjs/operators';
 
 
 @Component({
@@ -40,15 +42,29 @@ export class MichaelLimousineComponent implements OnInit {
 
 
   constructor(private sanitizer: DomSanitizer, private titleService: Title,
-    private meta: Meta) {   
+    private meta: Meta,  private activatedRoute: ActivatedRoute,
+    private router: Router) {   
     }
   
   ngOnInit() {
-   this.titleService.setTitle(this.title);
+   /* this.titleService.setTitle(this.title);
    this.meta.updateTag({ name: 'description', content: this.description });
    this.meta.updateTag({ property: 'og:image', content: this.metaImage });
-   this.meta.updateTag({ property: 'og:title', content: this.title });
-
+   this.meta.updateTag({ property: 'og:title', content: this.title }); */
+   this.router.events
+   .pipe(
+     filter((event) => event instanceof NavigationEnd),
+     map(() => this.activatedRoute),
+     map((route) => {
+       while (route.firstChild) route = route.firstChild;
+       return route;
+     }),
+     filter((route) => route.outlet === 'primary'),
+     mergeMap((route) => route.data)
+   )
+   .subscribe((data) => {
+     this.titleService.setTitle(this.title);
+   });
   }
 
   get sanitizedUrl(): SafeUrl {
