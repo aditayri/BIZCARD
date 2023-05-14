@@ -19,17 +19,20 @@ export class Michael2Component implements OnInit {
   WebsiteUrl = 'https://michaellimozin.co.il/';
   AboutUs = "מיכאל לימוזין – הסעות VIP היא חברת הסעות במרכז שמספקת שירותים איכותיים ויוקרתיים לחברות, ארגונים, מוסדות לימוד, לקוחות פרטיים ועוד. החברה מעמידה לרשות הקהל הרחב צי מכוניות חדיש ומאובזר ברמה VIP גבוהה, הכוללת: מיניבוסים, אוטובוסים ומעלונים.";
 
+  isAboutVisible=false;
+  isServicesVisible=false;
+  isMapVisible=false;
 
   mapCenter: google.maps.LatLngLiteral = { lat: 31.995672, lng: 34.936824 }; // Replace with your desired latitude and longitude
   mapZoom = 13; // Adjust the zoom level as needed
   markerPosition: google.maps.LatLngLiteral = { lat: 31.995672, lng: 34.936824 }; // Replace with your desired marker position
   options: google.maps.MapOptions = {
-    mapTypeId: 'hybrid',
-    zoomControl: false,
-    scrollwheel: false,
-    disableDoubleClickZoom: true,
-    maxZoom: 20,
-    minZoom: 8,
+  mapTypeId: 'hybrid',
+  zoomControl: false,
+  scrollwheel: false,
+  disableDoubleClickZoom: true,
+  maxZoom: 20,
+  minZoom: 8,
   };
   constructor(private sanitizer: DomSanitizer, private titleService: Title,
     private meta: Meta) {   
@@ -39,18 +42,6 @@ export class Michael2Component implements OnInit {
     this.titleService.setTitle(this.title);
     this.meta.updateTag({ property: 'og:image', content: './assets/michael-limousin-images/theme.jpg' });
 
-    /* navigator.geolocation.getCurrentPosition((position) => {
-      this.mapCenter = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude,
-      };
-      this.markerPosition ={
-        lat: position.coords.latitude,
-        lng: position.coords.longitude,
-      };
-
-    }); */
-
   }
 
   get sanitizedUrl(): SafeUrl {
@@ -58,4 +49,13 @@ export class Michael2Component implements OnInit {
     return this.sanitizer.bypassSecurityTrustUrl(url);
   }
 
+  toggleAboutText() {
+    this.isAboutVisible = !this.isAboutVisible;
+  }
+  toggleServicesText() {
+    this.isServicesVisible = !this.isServicesVisible;
+  }
+  toggleMap() {
+    this.isMapVisible = !this.isMapVisible;
+  }
 }

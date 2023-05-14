@@ -1,71 +1,125 @@
-
 ::ng-deep :root {
     --max-width: 500px; /* define the max width value as a CSS variable */
     --min-width: 300px;
-    --flood-color:rgb(181, 179, 235);
+    --flood-color:rgba(255, 255, 255, 0.4);
   }
  
 
 body{
 /*      border: 2px solid rgb(37, 149, 171);
  */   
-     width: 100%;
-     max-width: var(--max-width);
-     min-width: var(--min-width);
-     display: block;
-     margin: 0;
-     background-image: url('src/assets/michael-limousin-images/background-image.jpg');
-     background-repeat: no-repeat;
-     background-size: cover;
-/*     background-color: rgb(15, 29, 53);
- */
+ width: 100%;
+ height:100%;
+ max-width: var(--max-width);
+ min-width: var(--min-width);
+
+ margin:0;
+ padding: 0;
+
+ display: flex;
+ flex-direction: column;
+
+ overflow: hidden;
 
 }
 
 .theme-wrapper{
-    width: 96%;
-    margin: auto auto;
-    height: 180px;
+   
+    position: relative;
 }
-
 #themePic{
     width: 100%;
-    height:100%;
+    height:200px;
+    
+     animation: zoomOut 3s forwards;
+     transform-origin: center;
+     
 }
+@keyframes zoomOut {
+    0% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1.4);
+    }
+}
+
+/* #profilePic{
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    margin: auto auto;
+    top: 0;
+    right:0;
+    opacity: 0.6;
+    border-radius: 10px;
+    
+} 
+ */
 
 section{
      /* border: 2px solid rgb(37, 149, 171); */
-     display: block;
-     position: relative;
-     overflow: auto;
+     background-image: url('src/assets/michael-limousin-images/michael-limousin-background.jpg');
+     background-repeat: no-repeat;
+     background-size: cover; 
+     display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: auto; 
+    flex:1;
  }
  section::-webkit-scrollbar{
     display: none;
      }
 
-section article p{
-/*     border: 2px solid rgb(130, 205, 25); 
- */     /* background-color: rgb(58, 72, 96);   */
 
+     section h2{
+        font-family: Arial, Helvetica, sans-serif;
+        color: rgb(255, 255, 255, 0.8);
+        text-align: center;
+        margin-bottom: 40px;
+        font-size: 33px;
+        background-color: rgba(232, 216, 232, 0.08);
+        padding: 15px 15px;
+        /*font-size: 40px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        text-align: center;
+        text-shadow: 2px 2px 2px rgba(193, 187, 232, 0.872); */
+    
+    }  
+    section .about{
+        width: 85%;
+        margin: auto auto;
+        text-align: center;
+        color: rgb(255, 255, 255, 0.6);
+        font-size: 20px;
+        background-color: rgba(0, 0, 0, 0.45);
+        border-radius: 20px;
+        padding: 14px;
+        margin-top: 8px;
+    }   
+
+section article p{
     direction: rtl;
     color: rgb(218, 227, 242);
-    width: 90%;
+    width: 95%;
     line-height: 1.5;
-    font-size: 25px;
+    font-size: 20px;
     text-align: right;
-   /*  margin-top: 10px;
-    padding: 30px; */
+    margin-top: 15px;
+   /* padding: 30px; */
 }
-section article h2{
-    font-family: Arial, Helvetica, sans-serif;
-    color: rgba(234, 232, 249, 0.872);
-    font-size: 40px;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    text-align: center;
-    text-shadow: 2px 2px 2px rgba(193, 187, 232, 0.872);
 
+
+
+section li{
+    margin-right: 10px;
+    direction: rtl;
+    margin-bottom: 15px;
+    text-align: center;
 }
+
 
 .Buttons{
      /* border: 4px solid rgb(211, 32, 151); */ 
@@ -74,17 +128,7 @@ section article h2{
      justify-content: center;
      align-items: center;
      flex-wrap: wrap;
-     flex-wrap: wrap;
-    /*  margin: 10px; */
-   /*  position: absolute;
-    width: 100%;
-    bottom: 0; */
-     
-     flex-wrap: wrap;     
-    /*  margin: 10px; */
-   /*  position: absolute;
-    width: 100%;
-    bottom: 0; */
+     flex: 1;  
      
 }
 
@@ -98,30 +142,26 @@ section article h2{
  text-align: center;
  width: calc(100% / 3);
 
- 
 }
 .Buttons i{
-    font-size: 20px;
-    color:var(--flood-color);
+    font-size: 22px;
+    color:black;
 
-    width: 50px; 
-    height: 50px;
-    line-height: 50px;
-    border: 1px solid var(--flood-color);
+    width: 55px; 
+    height: 55px;
+    line-height: 55px;
+
     border-radius: 50%; 
+    background-color: var(--flood-color);
 }
 
 .Buttons p{
     color:var(--flood-color);
     font-family: "Billabong", cursive;
-    font-size: 14px;
+    font-size: 16px;
     margin-top: 10px;
 }
 
-
-#map{
-    /* margin: 10px; */
-}
 
 
 

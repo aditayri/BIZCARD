@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
     <footer>
       <div class="container">
         <p>BIZCARD &copy; 2023  by Adi Tayri</p>
-        <p> Email: <a href="mailto:BIZCARD@gmail.com">BIZCARD@gmail.com</a></p>
+        <p> Email: <a href="mailto:aditayri@gmail.com">aditayri@gmail.com</a></p>
       </div>
     </footer>
   `,
@@ -19,7 +19,7 @@ import { Component, OnInit } from '@angular/core';
        height: 50px; 
        background-color: #333;
        color: #fff;
-       padding: 20px 20px;
+       padding: 20px 0;
        align-items: center;
     }
     footer .container{
@@ -29,10 +29,12 @@ import { Component, OnInit } from '@angular/core';
     }
     footer a {
         color: #fff;
-        font-size:13px;
+        font-size:12px;
       }
       footer p {
-        font-size:13px;
+        margin: 0;
+        font-size:12px;
+        margin-top:3px;
       }
     `
   ]
