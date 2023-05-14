@@ -14,7 +14,7 @@ export class MichaelLimousineComponent implements OnInit {
   title = 'michael-limousin';
   CompanyName= "מיכאל לימוזין הסעות";
   PhoneNumber = '+972509285550';
-  Message = 'שלום';
+  Message = '... ,שלום';
   GmailTo = 'mailto:limousine97@gmail.com';
   WebsiteUrl = 'https://michaellimozin.co.il/';
   AboutUs = "מיכאל לימוזין – הסעות VIP היא חברת הסעות במרכז שמספקת שירותים איכותיים ויוקרתיים לחברות, ארגונים, מוסדות לימוד, לקוחות פרטיים ועוד. החברה מעמידה לרשות הקהל הרחב צי מכוניות חדיש ומאובזר ברמה VIP גבוהה, הכוללת: מיניבוסים, אוטובוסים ומעלונים.";
@@ -41,6 +41,7 @@ export class MichaelLimousineComponent implements OnInit {
   ngOnInit() {
     this.titleService.setTitle(this.title);
     this.meta.updateTag({ property: 'og:image', content: './assets/michael-limousine-images/theme.jpg' });
+    this.meta.updateTag({ name: 'description', content: 'New Page Description michael' });
 
   }
 
