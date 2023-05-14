@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { Title, Meta } from '@angular/platform-browser';
-
+import { MetaServiceService } from './meta-service.service';
 
 import { AppRoutingModule,routingComponents } from './app-routing.module';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
@@ -32,8 +31,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule,
     MatIconModule
     ],
-  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy },Title,
-    Meta],
+  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy },MetaServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
