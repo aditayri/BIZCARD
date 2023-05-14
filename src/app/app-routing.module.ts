@@ -5,7 +5,7 @@ import { MichaelLimousineComponent } from './michael-limousine/michael-limousine
 
 const routes: Routes = [
   {path:'', component:BizCardComponent},
-  {path:'michael-limousine', component:MichaelLimousineComponent}
+  {path:'michael-limousine', component:MichaelLimousineComponent, data: { title: 'Michael Limousine' }}
 ];
 
 @NgModule({

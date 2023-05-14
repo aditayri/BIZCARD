@@ -2,6 +2,9 @@ import { Component,  OnInit } from '@angular/core';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { Title } from '@angular/platform-browser';
 import { Meta } from '@angular/platform-browser';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { filter, map, mergeMap } from 'rxjs/operators';
+
 
 
 @Component({
@@ -35,14 +38,26 @@ export class MichaelLimousineComponent implements OnInit {
   minZoom: 8,
   };
   constructor(private sanitizer: DomSanitizer, private titleService: Title,
-    private meta: Meta) {   
+    private meta: Meta, private activatedRoute: ActivatedRoute,
+  private router: Router) {   
     }
   
   ngOnInit() {
-    this.titleService.setTitle(this.title);
-    this.meta.updateTag({ property: 'og:image', content: './assets/michael-limousine-images/theme.jpg' });
-    this.meta.updateTag({ name: 'description', content: 'New Page Description michael' });
-
+    this.router.events
+    .pipe(
+      filter((event) => event instanceof NavigationEnd),
+      map(() => this.activatedRoute),
+      map((route) => {
+        while (route.firstChild) route = route.firstChild;
+        return route;
+      }),
+      filter((route) => route.outlet === 'primary'),
+      mergeMap((route) => route.data)
+    )
+    .subscribe((data) => {
+      const pageTitle = data['title'] || 'Default Page Title'; // Replace with your default page title
+      this.titleService.setTitle(pageTitle);
+    });
   }
 
   get sanitizedUrl(): SafeUrl {
