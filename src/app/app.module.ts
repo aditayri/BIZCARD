@@ -12,7 +12,6 @@ import { AppComponent } from './app.component';
 import { MichaelLimousineComponent } from './michael-limousine/michael-limousine.component';
 import { BizCardComponent } from './biz-card/biz-card.component';
 import { FooterComponent } from './footer/footer.component';
-import { Michael2Component } from './michael2/michael2.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
@@ -21,8 +20,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MichaelLimousineComponent,
     BizCardComponent,
     routingComponents,
-    FooterComponent,
-    Michael2Component
+    FooterComponent
   ],
   imports: [
     BrowserModule,
