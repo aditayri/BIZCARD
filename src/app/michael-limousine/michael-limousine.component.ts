@@ -1,9 +1,6 @@
 import { Component,  OnInit } from '@angular/core';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { Title, Meta } from '@angular/platform-browser';
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import { filter, map, mergeMap } from 'rxjs/operators';
-
 
 @Component({
   selector: 'app-michael-limousine',
@@ -18,7 +15,7 @@ export class MichaelLimousineComponent implements OnInit {
 
   CompanyName= "מיכאל לימוזין הסעות";
   PhoneNumber = '+972509285550';
-  Message = '... ,שלום';
+  Message = 'שלום, ...';
   GmailTo = 'mailto:limousine97@gmail.com';
   WebsiteUrl = 'https://michaellimozin.co.il/';
   AboutUs = "מיכאל לימוזין – הסעות VIP היא חברת הסעות במרכז שמספקת שירותים איכותיים ויוקרתיים לחברות, ארגונים, מוסדות לימוד, לקוחות פרטיים ועוד. החברה מעמידה לרשות הקהל הרחב צי מכוניות חדיש ומאובזר ברמה VIP גבוהה, הכוללת: מיניבוסים, אוטובוסים ומעלונים.";
@@ -42,29 +39,14 @@ export class MichaelLimousineComponent implements OnInit {
 
 
   constructor(private sanitizer: DomSanitizer, private titleService: Title,
-    private meta: Meta,  private activatedRoute: ActivatedRoute,
-    private router: Router) {   
+    private meta: Meta) {   
     }
   
   ngOnInit() {
-   /* this.titleService.setTitle(this.title);
-   this.meta.updateTag({ name: 'description', content: this.description });
-   this.meta.updateTag({ property: 'og:image', content: this.metaImage });
-   this.meta.updateTag({ property: 'og:title', content: this.title }); */
-   this.router.events
-   .pipe(
-     filter((event) => event instanceof NavigationEnd),
-     map(() => this.activatedRoute),
-     map((route) => {
-       while (route.firstChild) route = route.firstChild;
-       return route;
-     }),
-     filter((route) => route.outlet === 'primary'),
-     mergeMap((route) => route.data)
-   )
-   .subscribe((data) => {
-     this.titleService.setTitle(this.title);
-   });
+    this.titleService.setTitle(this.title);
+    this.meta.updateTag({ name: 'description', content: this.description });
+    this.meta.updateTag({ property: 'og:image', content: this.metaImage });
+    this.meta.updateTag({ property: 'og:title', content: this.title }); 
   }
 
   get sanitizedUrl(): SafeUrl {
