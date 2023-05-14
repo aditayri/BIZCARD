@@ -44,8 +44,10 @@ export class MichaelLimousineComponent implements OnInit {
   ngOnInit() {
      this.titleService.setTitle(this.title);
     this.meta.updateTag({ name: 'description', content: this.description });
-    this.meta.updateTag({ property: 'og:image', content: this.metaImage });
-    this.meta.updateTag({ property: 'og:title', content: this.title });  
+    this.meta.updateTag({ property:'og:image', content: this.metaImage });
+    this.meta.updateTag({ property:'og:title', content: this.title });  
+    this.meta.updateTag({ property:'og:description', content: this.description });  
+
     
   }
   
