@@ -6,20 +6,12 @@ import { MichaelLimousineComponent } from './michael-limousine/michael-limousine
 const routes: Routes = [
   {
     path:'',
-    component:BizCardComponent,
-     data: {
-       title: 'Bizcard',
-       description: 'Create your own business card'
-      }
-      },
+    component:BizCardComponent
+  },
   {
     path:'michael-limousine', 
     component:MichaelLimousineComponent, 
-    data: {
-       title: 'Michael Limsine' ,
-       description: 'מיכאל לימוזין הסעות'
-      }
-    }
+  }
 ];
 
 @NgModule({

@@ -1,9 +1,6 @@
 import { Component,  OnInit } from '@angular/core';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { Title, Meta } from '@angular/platform-browser';
-import { ActivatedRoute, Data, NavigationEnd, Router } from '@angular/router';
-import { filter, map, mergeMap, tap } from 'rxjs/operators';
-
 
 @Component({
   selector: 'app-michael-limousine',
@@ -42,8 +39,7 @@ export class MichaelLimousineComponent implements OnInit {
 
 
   constructor(private sanitizer: DomSanitizer, private titleService: Title,
-    private meta: Meta, private router: Router,
-    private activatedRoute: ActivatedRoute ) {}
+    private meta: Meta) {}
   
   ngOnInit() {
      this.titleService.setTitle(this.title);
