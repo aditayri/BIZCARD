@@ -1,10 +1,6 @@
 import { Component,  OnInit } from '@angular/core';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
-import { Title } from '@angular/platform-browser';
-import { Meta } from '@angular/platform-browser';
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import { filter, map, mergeMap } from 'rxjs/operators';
-
+import { Title, Meta } from '@angular/platform-browser';
 
 
 @Component({
@@ -14,7 +10,10 @@ import { filter, map, mergeMap } from 'rxjs/operators';
 })
 export class MichaelLimousineComponent implements OnInit {
 
-  title = 'michael-limousin';
+  title = 'Michael Limousine';
+  description = 'שירותי הסעות לכל חלקי הארץ';
+  metaImage = './assets/michael-limousine-images/theme.jpg';
+
   CompanyName= "מיכאל לימוזין הסעות";
   PhoneNumber = '+972509285550';
   Message = '... ,שלום';
@@ -26,37 +25,28 @@ export class MichaelLimousineComponent implements OnInit {
   isServicesVisible=false;
   isMapVisible=false;
 
+  //Map for location of business
   mapCenter: google.maps.LatLngLiteral = { lat: 31.995672, lng: 34.936824 }; // Replace with your desired latitude and longitude
   mapZoom = 13; // Adjust the zoom level as needed
   markerPosition: google.maps.LatLngLiteral = { lat: 31.995672, lng: 34.936824 }; // Replace with your desired marker position
-  options: google.maps.MapOptions = {
-  mapTypeId: 'hybrid',
-  zoomControl: false,
-  scrollwheel: false,
-  disableDoubleClickZoom: true,
-  maxZoom: 20,
-  minZoom: 8,
-  };
+  options: google.maps.MapOptions = 
+  {
+    mapTypeId: 'hybrid',
+    zoomControl: false,
+    scrollwheel: false,
+    disableDoubleClickZoom: true,
+    maxZoom: 20,
+    minZoom: 8 };
+
+
   constructor(private sanitizer: DomSanitizer, private titleService: Title,
-    private meta: Meta, private activatedRoute: ActivatedRoute,
-  private router: Router) {   
+    private meta: Meta) {   
     }
   
   ngOnInit() {
-    this.router.events
-    .pipe(
-      filter((event) => event instanceof NavigationEnd),
-      map(() => this.activatedRoute),
-      map((route) => {
-        while (route.firstChild) route = route.firstChild;
-        return route;
-      }),
-      filter((route) => route.outlet === 'primary'),
-      mergeMap((route) => route.data)
-    )
-    .subscribe((data) => {
-      this.titleService.setTitle(this.title);
-    });
+   this.titleService.setTitle(this.title);
+   this.meta.updateTag({ name: 'description', content: this.description });
+   this.meta.updateTag({ property: 'og:image', content: this.metaImage });
   }
 
   get sanitizedUrl(): SafeUrl {
