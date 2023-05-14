@@ -47,6 +47,8 @@ export class MichaelLimousineComponent implements OnInit {
    this.titleService.setTitle(this.title);
    this.meta.updateTag({ name: 'description', content: this.description });
    this.meta.updateTag({ property: 'og:image', content: this.metaImage });
+   this.meta.updateTag({ property: 'og:title', content: this.title });
+
   }
 
   get sanitizedUrl(): SafeUrl {
