@@ -2,7 +2,6 @@ import { Component,  OnInit } from '@angular/core';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 /* import { Title, Meta } from '@angular/platform-browser';
  */
-import { MetaServiceService } from '../meta-service.service';
 
 @Component({
   selector: 'app-michael-limousine',
@@ -40,11 +39,10 @@ export class MichaelLimousineComponent implements OnInit {
     minZoom: 8 };
 
 
-  constructor(private sanitizer: DomSanitizer, private meta:MetaServiceService) {}
+  constructor(private sanitizer: DomSanitizer) {}
   
   ngOnInit() {
-     this.meta.setTitle(this.title);
-     this.meta.setDescription(this.description);
+     
   }
   
 
