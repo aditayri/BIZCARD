@@ -19,13 +19,14 @@ body{
  display: flex;
  flex-direction: column;
 
- overflow: hidden;
+ overflow: auto;
 
 }
 
 .theme-wrapper{
    
     position: relative;
+    overflow: hidden;
 }
 #themePic{
     width: 100%;
@@ -102,7 +103,6 @@ section{
 
 section article p{
     direction: rtl;
-    color: rgb(218, 227, 242);
     width: 95%;
     line-height: 1.5;
     font-size: 20px;
