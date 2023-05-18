@@ -1,11 +1,15 @@
 
 <body>
   
-  <div class = "theme-wrapper">
+  
+  
+<section>
+
+  <div  class= "theme-wrapper">
     <img id = "themePic" src = "./assets/michael-limousine-images/theme.jpg">
     <!-- <img id = "profilePic" src = "./assets/michael-limousin-images/profile.png"> -->
   </div>
-<section>
+ 
 
       <h2>מיכאל לימוזין הסעות</h2>
       <div class="about">אודות החברה  
@@ -41,30 +45,34 @@
         <i (click)="toggleMap()" *ngIf = "isMapVisible" class='fas fa-angle-double-up' style="margin-top: 10px;"></i>
       </div> 
       
+      <div class = "Buttons" >
+        <div> <a [href]="sanitizedUrl" target="_blank"  style="text-decoration: none;">
+          <i class="fab fa-whatsapp"></i></a>
+          <p id="whatsapp">ווטצאפ</p>
+        </div>
+          
+        <div><a href={{GmailTo}} target="_blank"  style="text-decoration: none;">
+          <i class="fas fa-envelope"></i></a>
+          <p id="gmail">דוא"ל</p>
+         </div>
       
-    <div class = "Buttons" >
-          <div> <a [href]="sanitizedUrl" target="_blank"  style="text-decoration: none;">
-            <i class="fab fa-whatsapp"></i>
-            <p id="whatsapp">ווטצאפ</p>
-          </a></div>
-            
-          <div><a href={{GmailTo}} target="_blank"  style="text-decoration: none;">
-            <i class="fas fa-envelope"></i>
-            <p id="gmail">דוא"ל</p>
-          </a></div>
-  
-            <div><a href={{WebsiteUrl}} target="_blank"  style="text-decoration: none;">
-              <i class="fas fa-globe"></i>
-              <p id="website">האתר הרשמי</p>
-            </a></div>
-
-
-    </div>
+          <div><a href={{WebsiteUrl}} target="_blank"  style="text-decoration: none;">
+            <i class="fas fa-globe"></i></a>
+            <p id="website">האתר הרשמי</p>
+          </div>
+      
+      
+      </div>
+   
 
 
 </section>
 
-  <app-footer></app-footer>
-  
+
+<app-footer></app-footer>
+
+
 </body>
+
+
 

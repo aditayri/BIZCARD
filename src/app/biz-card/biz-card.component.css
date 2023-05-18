@@ -20,25 +20,23 @@ body{
  flex-direction: column;
 
  overflow: auto;
-
-
-    
-   
 }
+
 
 
  .theme-wrapper{
-    position: relative;
+  position: relative;
     overflow: hidden;
-
+    height: 200px;
 }
 
+
+
 #themePic{
-    width: 100%;
-    height:200px;
-    
-     animation: zoomOut 3s forwards;
-     transform-origin: center;
+  width: 100%;
+  height: 100%;
+   animation: zoomOut 3s forwards;
+   transform-origin: center;
 } 
 @keyframes zoomOut {
     0% {
@@ -65,14 +63,13 @@ section{
   background-image: url('src/assets/bizcard-images/bizcard-background.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-    display: flex;
-    flex-direction: column;
+    display: block;
     position: relative;
     overflow: auto; 
     flex:1;
 }
 section::-webkit-scrollbar{
-   display: none;
+     display: none; 
     }
 
    

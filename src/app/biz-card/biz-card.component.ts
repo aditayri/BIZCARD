@@ -8,8 +8,11 @@ import { Title } from '@angular/platform-browser';
   templateUrl: './biz-card.component.html',
   styleUrls: ['./biz-card.component.css']
 })
+
+
 export class BizCardComponent implements OnInit {
 
+  
   title = 'Bizcard';
   CompanyName= "Adi Tayri LLC";
   PhoneNumber = '+972502003238';
@@ -45,5 +48,5 @@ export class BizCardComponent implements OnInit {
     
     window.open(pageUrl, '_blank');
   }
-
-}
+  
+  }

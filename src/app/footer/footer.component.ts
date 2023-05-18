@@ -23,7 +23,6 @@ import { Component, OnInit } from '@angular/core';
        align-items: center;
     }
     footer .container{
-        max-width: var(--max-width);
         margin: 0 auto;
         text-align: center;
     }

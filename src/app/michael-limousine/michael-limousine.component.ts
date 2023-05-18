@@ -21,6 +21,7 @@ export class MichaelLimousineComponent implements OnInit {
   WebsiteUrl = 'https://michaellimozin.co.il/';
   AboutUs = "מיכאל לימוזין – הסעות VIP היא חברת הסעות במרכז שמספקת שירותים איכותיים ויוקרתיים לחברות, ארגונים, מוסדות לימוד, לקוחות פרטיים ועוד. החברה מעמידה לרשות הקהל הרחב צי מכוניות חדיש ומאובזר ברמה VIP גבוהה, הכוללת: מיניבוסים, אוטובוסים ומעלונים.";
 
+
   isAboutVisible=false;
   isServicesVisible=false;
   isMapVisible=false;
@@ -58,6 +59,12 @@ export class MichaelLimousineComponent implements OnInit {
     this.isServicesVisible = !this.isServicesVisible;
   }
   toggleMap() {
+    this.mapCenter = { lat: 31.995672, lng: 34.936824 }; // Replace with your desired latitude and longitude
+    this.mapZoom = 13; // Adjust the zoom level as needed
+    this.markerPosition = { lat: 31.995672, lng: 34.936824 }; 
     this.isMapVisible = !this.isMapVisible;
   }
+
+
+  
 }
