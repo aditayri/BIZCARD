@@ -14,6 +14,9 @@ export class BizCardComponent implements OnInit {
 
   
   title = 'Bizcard';
+  description = 'Create your own business card';
+  metaImage = './assets/bizcard-images/theme.jpg';
+
   CompanyName= "Adi Tayri LLC";
   PhoneNumber = '+972502003238';
   Message = 'Hello, and welcome to BizId company';
@@ -28,7 +31,7 @@ export class BizCardComponent implements OnInit {
   constructor(private sanitizer: DomSanitizer, private titleService: Title) {}
 
   ngOnInit() {
-    this.titleService.setTitle(this.title);
+    //this.titleService.setTitle(this.title);
   }
 
   get sanitizedUrl(): SafeUrl {
