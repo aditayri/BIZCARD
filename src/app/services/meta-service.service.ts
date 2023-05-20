@@ -10,9 +10,9 @@ export class MetaService {
 
   updateMetaTags(title: string, description: string): void {
     this.titleService.setTitle(title);
-    this.metaService.addTag({ name: 'description', content: description });
-    this.metaService.addTag({property:'og:title', content: title});
-    this.metaService.addTag({property:'og:description', content: description});
+    this.metaService.updateTag({ name: 'description', content: description });
+    this.metaService.updateTag({property:'og:title', content: title});
+    this.metaService.updateTag({property:'og:description', content: description});
 
   }
 

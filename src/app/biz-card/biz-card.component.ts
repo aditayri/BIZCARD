@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { Title } from '@angular/platform-browser';
+import { MetaService } from '../services/meta-service.service';
 
 
 @Component({
@@ -28,10 +29,10 @@ export class BizCardComponent implements OnInit {
             "reliable, and efficient transportation solutions to our clients. With years of experience in the industry";
 
 
-  constructor(private sanitizer: DomSanitizer, private titleService: Title) {}
+  constructor(private sanitizer: DomSanitizer, private meta:MetaService) {}
 
   ngOnInit() {
-    //this.titleService.setTitle(this.title);
+    this.meta.updateMetaTags(this.title, this.description);
   }
 
   get sanitizedUrl(): SafeUrl {
