@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-
 import { AppRoutingModule,routingComponents } from './app-routing.module';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { GoogleMapsModule } from '@angular/google-maps'
 import { MatIconModule } from '@angular/material/icon';
+import { MetaService } from './services/meta-service.service';
 
 
 import { AppComponent } from './app.component';
@@ -29,7 +29,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule,
     MatIconModule
     ],
-  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
+  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy },
+  MetaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

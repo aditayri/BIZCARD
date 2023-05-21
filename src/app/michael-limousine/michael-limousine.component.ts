@@ -40,10 +40,12 @@ export class MichaelLimousineComponent implements OnInit {
     minZoom: 8 };
 
 
-  constructor(private sanitizer: DomSanitizer, private meta: MetaService) {}
+  constructor(private sanitizer: DomSanitizer, private meta: MetaService) {
+    this.meta.updateMetaTags(this.title, this.description);
+
+  }
   
   ngOnInit() {
-    this.meta.updateMetaTags(this.title, this.description);
   }
   
 

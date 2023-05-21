@@ -29,10 +29,12 @@ export class BizCardComponent implements OnInit {
             "reliable, and efficient transportation solutions to our clients. With years of experience in the industry";
 
 
-  constructor(private sanitizer: DomSanitizer, private meta:MetaService) {}
+  constructor(private sanitizer: DomSanitizer, private meta:MetaService) {
+    this.meta.updateMetaTags(this.title, this.description);
+
+  }
 
   ngOnInit() {
-    this.meta.updateMetaTags(this.title, this.description);
   }
 
   get sanitizedUrl(): SafeUrl {
