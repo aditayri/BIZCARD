@@ -5,20 +5,20 @@ import { AppRoutingModule,routingComponents } from './app-routing.module';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { GoogleMapsModule } from '@angular/google-maps'
 import { MatIconModule } from '@angular/material/icon';
-import { MetaService } from './services/meta-service.service';
 
 
 import { AppComponent } from './app.component';
 import { MichaelLimousineComponent } from './michael-limousine/michael-limousine.component';
-import { BizCardComponent } from './biz-card/biz-card.component';
+import { BizcardComponent } from './bizcard/bizcard.component';
 import { FooterComponent } from './footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SeoService } from './services/seo-service';
 
 @NgModule({
   declarations: [
     AppComponent,
     MichaelLimousineComponent,
-    BizCardComponent,
+    BizcardComponent,
     routingComponents,
     FooterComponent
   ],
@@ -29,8 +29,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule,
     MatIconModule
     ],
-  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy },
-  MetaService],
+  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy },SeoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

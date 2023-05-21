@@ -1,6 +1,5 @@
-import { Component,  OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
-import { MetaService } from '../services/meta-service.service';
 
 
 @Component({
@@ -8,11 +7,9 @@ import { MetaService } from '../services/meta-service.service';
   templateUrl: './michael-limousine.component.html',
   styleUrls: ['./michael-limousine.component.css']
 })
-export class MichaelLimousineComponent implements OnInit {
+export class MichaelLimousineComponent {
 
-  title = 'Michael Limousine';
-  description = 'שירותי הסעות לכל חלקי הארץ';
-  metaImage = './assets/michael-limousine-images/theme.jpg';
+  
 
   CompanyName= "מיכאל לימוזין הסעות";
   PhoneNumber = '+972509285550';
@@ -40,13 +37,11 @@ export class MichaelLimousineComponent implements OnInit {
     minZoom: 8 };
 
 
-  constructor(private sanitizer: DomSanitizer, private meta: MetaService) {
-    this.meta.updateMetaTags(this.title, this.description);
+  constructor(private sanitizer: DomSanitizer) {
 
   }
   
-  ngOnInit() {
-  }
+
   
 
   get sanitizedUrl(): SafeUrl {

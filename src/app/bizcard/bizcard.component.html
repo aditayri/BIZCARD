@@ -1,0 +1,49 @@
+
+<body >
+
+
+    <section >
+      
+      <div  class="theme-wrapper">
+        <img id="themePic" src = "./assets/bizcard-images/theme.jpg">
+        <!--  <img  id = "Profile" src = "./assets/bizcard-images/profile.jpg"> -->
+      </div> 
+  
+      <article>
+        <h2>BIZCARD</h2>
+        <p>{{AboutUs}}</p>
+        </article>
+  
+        <div class = "Buttons" >
+    
+          <div> <a [href]="sanitizedUrl" target="_blank"  style="text-decoration: none;">
+            <img src="./assets/bizcard-images/whatsapp.png">
+            <p id="whatsapp">WhatsApp</p></a></div>
+     
+           
+          <div (click)="InstagramClick()"><img src="./assets/bizcard-images/instagram.png">
+              <p id="instagram">Instagram</p></div> 
+    
+          <div (click)="FacebookClick()"><img src="./assets/bizcard-images/facebook.png">
+            <p id="facebook">Facebook</p></div>  
+    
+          <div><a href={{GmailTo}}><img src="./assets/bizcard-images/gmail.png"> </a>
+            <p id="gmail">Gmail</p></div>
+   
+        </div>
+  
+        <div class="pages">
+          <button mat-button  routerLink="">BizCard</button>
+          <button mat-button  routerLink="/michael-limousine">michael-limousine</button>
+        </div>
+      
+    </section>
+    
+    <app-footer></app-footer>
+  
+    </body>
+  
+  
+  
+  
+  

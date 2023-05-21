@@ -1,22 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
-import { Title } from '@angular/platform-browser';
-import { MetaService } from '../services/meta-service.service';
-
 
 @Component({
-  selector: 'app-biz-card',
-  templateUrl: './biz-card.component.html',
-  styleUrls: ['./biz-card.component.css']
+  selector: 'app-bizcard',
+  templateUrl: './bizcard.component.html',
+  styleUrls: ['./bizcard.component.css']
 })
-
-
-export class BizCardComponent implements OnInit {
-
-  
-  title = 'Bizcard';
-  description = 'Create your own business card';
-  metaImage = './assets/bizcard-images/theme.jpg';
+export class BizcardComponent {
 
   CompanyName= "Adi Tayri LLC";
   PhoneNumber = '+972502003238';
@@ -29,13 +19,11 @@ export class BizCardComponent implements OnInit {
             "reliable, and efficient transportation solutions to our clients. With years of experience in the industry";
 
 
-  constructor(private sanitizer: DomSanitizer, private meta:MetaService) {
-    this.meta.updateMetaTags(this.title, this.description);
+  constructor(private sanitizer: DomSanitizer) {
 
   }
 
-  ngOnInit() {
-  }
+
 
   get sanitizedUrl(): SafeUrl {
     let url = `https://api.whatsapp.com/send?phone=${this.PhoneNumber}&text=${encodeURIComponent(this.Message)}`;
@@ -55,4 +43,5 @@ export class BizCardComponent implements OnInit {
     window.open(pageUrl, '_blank');
   }
   
-  }
+
+}

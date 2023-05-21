@@ -7,7 +7,7 @@ import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { AppServerModule } from './src/main.server';
 import { renderModule } from '@angular/platform-server';
-import { MetaService } from './src/app/services/meta-service.service';
+import { MetaService } from './src/app/services/seo-service';
 import { Meta, Title } from '@angular/platform-browser';
 
 

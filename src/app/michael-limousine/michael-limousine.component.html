@@ -3,76 +3,76 @@
   
   
   
-<section>
-
-  <div  class= "theme-wrapper">
-    <img id = "themePic" src = "./assets/michael-limousine-images/theme.jpg">
-    <!-- <img id = "profilePic" src = "./assets/michael-limousin-images/profile.png"> -->
-  </div>
- 
-
-      <h2>מיכאל לימוזין הסעות</h2>
-      <div class="about">אודות החברה  
-        <i (click)="toggleAboutText()" *ngIf = "!isAboutVisible" style="display: block; margin-top: 3px;" class='fas fa-angle-double-down'></i>
-        <article><p [hidden]="!isAboutVisible" >{{AboutUs}}</p></article>
-        <i (click)="toggleAboutText()" *ngIf = "isAboutVisible" class='fas fa-angle-double-up' style="margin-top: 10px;"></i>
-      </div> 
-      <div class="about" > שירותי הסעות  
-        <i (click)="toggleServicesText()" *ngIf = "!isServicesVisible" style="display: block; margin-top: 3px;" class='fas fa-angle-double-down'></i>
-        <ul [hidden]="!isServicesVisible" >
-          <li>הסעות תלמידים</li>
-          <li>הסעות עובדים</li>
-          <li>הסעות אומנים</li>
-          <li>הסעות VIP לאירועים</li>
-          <li>הסעות לשדה התעופה</li>
-          <li>הסעות נכים</li>
-        </ul>
-        <i (click)="toggleServicesText()" *ngIf = "isServicesVisible" class='fas fa-angle-double-up' style="margin-top: 10px;"></i>
-      </div> 
-
-      <div class="about">כתובת 
-        <i (click)="toggleMap()" *ngIf = "!isMapVisible" style="display: block; margin-top: 3px; margin-bottom: 5px;" class='fas fa-angle-double-down'></i>
-        <div id="map" [hidden]="!isMapVisible" style="margin-top: 10px;">
-          <google-map  
-            height="200px"
-            width="100%"
-            [zoom]="mapZoom"
-            [center]="mapCenter"
-            [options]="options">
-            <map-marker [position]="markerPosition"></map-marker>
-          </google-map>
-        </div>
-        <i (click)="toggleMap()" *ngIf = "isMapVisible" class='fas fa-angle-double-up' style="margin-top: 10px;"></i>
-      </div> 
-      
-      <div class = "Buttons" >
-        <div> <a [href]="sanitizedUrl" target="_blank"  style="text-decoration: none;">
-          <i class="fab fa-whatsapp"></i></a>
-          <p id="whatsapp">ווטצאפ</p>
-        </div>
-          
-        <div><a href={{GmailTo}} target="_blank"  style="text-decoration: none;">
-          <i class="fas fa-envelope"></i></a>
-          <p id="gmail">דוא"ל</p>
-         </div>
-      
-          <div><a href={{WebsiteUrl}} target="_blank"  style="text-decoration: none;">
-            <i class="fas fa-globe"></i></a>
-            <p id="website">האתר הרשמי</p>
-          </div>
-      
-      
+    <section>
+    
+      <div  class= "theme-wrapper">
+        <img id = "themePic" src = "./assets/michael-limousine-images/theme.jpg">
+        <!-- <img id = "profilePic" src = "./assets/michael-limousin-images/profile.png"> -->
       </div>
-   
-
-
-</section>
-
-
-<app-footer></app-footer>
-
-
-</body>
-
-
-
+     
+    
+          <h2>מיכאל לימוזין הסעות</h2>
+          <div class="about">אודות החברה  
+            <i (click)="toggleAboutText()" *ngIf = "!isAboutVisible" style="display: block; margin-top: 3px;" class='fas fa-angle-double-down'></i>
+            <article><p [hidden]="!isAboutVisible" >{{AboutUs}}</p></article>
+            <i (click)="toggleAboutText()" *ngIf = "isAboutVisible" class='fas fa-angle-double-up' style="margin-top: 10px;"></i>
+          </div> 
+          <div class="about" > שירותי הסעות  
+            <i (click)="toggleServicesText()" *ngIf = "!isServicesVisible" style="display: block; margin-top: 3px;" class='fas fa-angle-double-down'></i>
+            <ul [hidden]="!isServicesVisible" >
+              <li>הסעות תלמידים</li>
+              <li>הסעות עובדים</li>
+              <li>הסעות אומנים</li>
+              <li>הסעות VIP לאירועים</li>
+              <li>הסעות לשדה התעופה</li>
+              <li>הסעות נכים</li>
+            </ul>
+            <i (click)="toggleServicesText()" *ngIf = "isServicesVisible" class='fas fa-angle-double-up' style="margin-top: 10px;"></i>
+          </div> 
+    
+          <div class="about">כתובת 
+            <i (click)="toggleMap()" *ngIf = "!isMapVisible" style="display: block; margin-top: 3px; margin-bottom: 5px;" class='fas fa-angle-double-down'></i>
+            <div id="map" [hidden]="!isMapVisible" style="margin-top: 10px;">
+              <google-map  
+                height="200px"
+                width="100%"
+                [zoom]="mapZoom"
+                [center]="mapCenter"
+                [options]="options">
+                <map-marker [position]="markerPosition"></map-marker>
+              </google-map>
+            </div>
+            <i (click)="toggleMap()" *ngIf = "isMapVisible" class='fas fa-angle-double-up' style="margin-top: 10px;"></i>
+          </div> 
+          
+          <div class = "Buttons" >
+            <div> <a [href]="sanitizedUrl" target="_blank"  style="text-decoration: none;">
+              <i class="fab fa-whatsapp"></i></a>
+              <p id="whatsapp">ווטצאפ</p>
+            </div>
+              
+            <div><a href={{GmailTo}} target="_blank"  style="text-decoration: none;">
+              <i class="fas fa-envelope"></i></a>
+              <p id="gmail">דוא"ל</p>
+             </div>
+          
+              <div><a href={{WebsiteUrl}} target="_blank"  style="text-decoration: none;">
+                <i class="fas fa-globe"></i></a>
+                <p id="website">האתר הרשמי</p>
+              </div>
+          
+          
+          </div>
+       
+    
+    
+    </section>
+    
+    
+    <app-footer></app-footer>
+    
+    
+    </body>
+    
+    
+    
