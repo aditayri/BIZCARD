@@ -7,9 +7,9 @@ import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
   templateUrl: './michael-limousine.component.html',
   styleUrls: ['./michael-limousine.component.css']
 })
-export class MichaelLimousineComponent {
 
-  
+export class MichaelLimousineComponent {
+ 
 
   CompanyName= "מיכאל לימוזין הסעות";
   PhoneNumber = '+972509285550';
@@ -40,8 +40,6 @@ export class MichaelLimousineComponent {
   constructor(private sanitizer: DomSanitizer) {
 
   }
-  
-
   
 
   get sanitizedUrl(): SafeUrl {
